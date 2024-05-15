@@ -23,26 +23,51 @@ describe("Handling Alerts", () => {
    * 6. Validate the result message equals "You rejected the alert by clicking Cancel."
    */
 
-  it('Handling the Confirmation Alert', () => {
-    cy.on('window:confirm', (str) => {
-      expect(str).equal('Would you like to stay on TechGlobal Training application?')
-      return false
-    })
+  it("Handling the Confirmation Alert", () => {
+    cy.get("#confirmation_alert").click();
 
-    cy.get('#confirmation_alert').click()
-    cy.get('#action').should('have.text', 'You rejected the alert by clicking Cancel.')
-  })
+    cy.once("window:confirm", (str) => {
+      expect(str).equal(
+        "Would you like to stay on TechGlobal Training application?"
+      );
+      return false;
+    });
 
-  it(('Handling Prompt Alert'), () => {
+    cy.get("#action").should(
+      "have.text",
+      "You rejected the alert by clicking Cancel."
+    );
 
-    cy.get('#prompt_alert')
-  })
+    cy.get("#confirmation_alert").click();
+  });
 
+  it("Handling Prompt Alert", () => {
+    // cy.window().then((win) => {
+    //   cy.stub(win, 'prompt').returns(null)
+    // })
+
+    // cy.window().then((win) => {
+    //   cy.stub(win, "prompt")
+
+    //   return false
+    // });
+
+    // cy.window().then((win) => {
+    //   cy.stub(win, "prompt").returns('TechGlobal school message');
+    // });
+
+    cy.window().then((win) => {
+      cy.stub(win, "prompt").callsFake((message) => {
+        console.log(message)
+        expect(message).equal('What would you like to say to TechGlobal?')
+
+        return 'My Message'
+      })
+    });
+
+    cy.get("#prompt_alert").click();
+  });
 });
-
-
-
-
 
 
 
