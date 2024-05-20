@@ -57,6 +57,7 @@ Cypress.Commands.add('assertAttribute', { prevSubject: 'element'}, (subject, att
     cy.wrap(subject).should('have.attr', attribute, value)
   }
 })
+
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
