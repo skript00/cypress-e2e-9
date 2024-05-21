@@ -3,7 +3,6 @@
 describe("Assertions", () => {
   beforeEach(() => {
     // This will fail if the page doesnt send text/html with a 200 status
-    cy.visit("https://www.techglobal-training.com/frontend/");
     cy.contains(".cards", "Html Elements").click();
   });
 
@@ -280,7 +279,7 @@ describe("Assertions", () => {
     })
   });
 
-  it.only('Assertion Practices', () => {
+  it('Assertion Practices', () => {
     /**
      * 1. Go to https://techglobal-training.com/frontend
      * 2. Navigate to 'Html Elements' card
