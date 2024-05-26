@@ -1,19 +1,19 @@
-describe("Handling iFrames", () => {
+describe('Handling iFrames', () => {
   beforeEach(() => {
-    cy.clickCard("Multiple Windows");
-  });
+    cy.clickCard('Multiple Windows')
+  })
 
-  it("iFrame", () => {
-    cy.get("#microsoft").should("have.attr", "target", "_blank");
+  it('iFrame', () => {
+    cy.get('#microsoft').should('have.attr', 'target', '_blank')
 
-    cy.get("#microsoft").invoke("removeAttr", "target").click();
+    cy.get('#microsoft').invoke('removeAttr', 'target').click()
 
-    cy.url().should("contains", "microsoft");
+    cy.url().should('contains', 'microsoft')
 
-  });
+  })
 
   it('Test Case', () => {
-      /**
+    /**
    * Go to https://techglobal-training.com/frontend/
    * Click on the "Multiple Windows" card
    * Click on the "Apple" link
@@ -22,15 +22,15 @@ describe("Handling iFrames", () => {
    * Validate title contains "techglobal"
    */
 
-      cy.contains('Apple').invoke('removeAttr', 'target').click()
+    cy.contains('Apple').invoke('removeAttr', 'target').click()
 
-      cy.title().should('eq', 'Apple')
+    cy.title().should('eq', 'Apple')
 
-      cy.go(-1)
+    cy.go(-1)
 
-      cy.title().then((el) => {
-        cy.wrap(el.toLowerCase()).should('contain', 'techglobal')
-      })
+    cy.title().then((el) => {
+      cy.wrap(el.toLowerCase()).should('contain', 'techglobal')
+    })
   
   })
-});
+})

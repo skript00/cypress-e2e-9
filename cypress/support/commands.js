@@ -13,38 +13,38 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
-Cypress.Commands.add("clickCard", (link) => {
-  cy.get(".cards").contains(link).click();
-});
+Cypress.Commands.add('clickCard', (link) => {
+  cy.get('.cards').contains(link).click()
+})
 
-Cypress.Commands.add("selectDropdownOption", (element, option) => {
-  cy.get(element).select(option);
-});
+Cypress.Commands.add('selectDropdownOption', (element, option) => {
+  cy.get(element).select(option)
+})
 
-Cypress.Commands.add("login", (email, name) => {
-  cy.get('[type="email"]').type(email);
-  cy.get('.mt-3 > [type="text"]').type(name);
-  cy.get(".mt-3 + button").click();
-});
+Cypress.Commands.add('login', (email, name) => {
+  cy.get('[type="email"]').type(email)
+  cy.get('.mt-3 > [type="text"]').type(name)
+  cy.get('.mt-3 + button').click()
+})
 
-Cypress.Commands.add("haveText2", (el, value) => {
-  cy.get(element).should("have.text", value);
-});
+Cypress.Commands.add('haveText2', (el, value) => {
+  cy.get(element).should('have.text', value)
+})
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
-Cypress.Commands.add("logText", { prevSubject: true }, (subject) => {
-  const text = subject.text();
+Cypress.Commands.add('logText', { prevSubject: true }, (subject) => {
+  const text = subject.text()
 
-  cy.log(text);
+  cy.log(text)
 
-  return cy.wrap(subject);
-});
+  return cy.wrap(subject)
+})
 
-Cypress.Commands.add("haveText", { prevSubject: true }, (subject, value) => {
+Cypress.Commands.add('haveText', { prevSubject: true }, (subject, value) => {
   // expect(subject.text()).equal(value);
-  cy.wrap(subject).should("have.text", value);
-});
+  cy.wrap(subject).should('have.text', value)
+})
 
 /**
  * Create a child custom command that will validate the attribute and the value of web element 

@@ -1,23 +1,23 @@
-describe("Handling iFrames", () => {
+describe('Handling iFrames', () => {
   beforeEach(() => {
-    cy.contains(".cards", "IFrames").click();
-  });
+    cy.contains('.cards', 'IFrames').click()
+  })
 
-  it("iFrame", () => {
+  it('iFrame', () => {
     // cy.get('#form_frame')
     // .its('0.contentDocument.body')
     // .should('not.be.empty')
     // .find('#first_name').type('MyName')
 
-    const arr = ["tech", "global"];
+    const arr = ['tech', 'global']
 
-    cy.get("#form_frame")
-      .its("0.contentDocument.body")
-      .find("#first_name, #last_name")
+    cy.get('#form_frame')
+      .its('0.contentDocument.body')
+      .find('#first_name, #last_name')
       .each(($el, index) => {
-        cy.wrap($el).type(arr[index]);
-      });
-  });
+        cy.wrap($el).type(arr[index])
+      })
+  })
 
   /**
    * Go to https://techglobal-training.com/frontend/
@@ -32,17 +32,17 @@ describe("Handling iFrames", () => {
     
     const fName = 'John'
     const lName = 'Doe'
-    const names = [fName, lName];
+    const names = [fName, lName]
 
-    cy.get("#form_frame")
-    .its("0.contentDocument.body")
-    .find("#first_name, #last_name")
-    .each(($el, index) => {
-      cy.wrap($el).type(names[index])
-    })
-    cy.get("#form_frame")
-    .its("0.contentDocument.body").find('#submit').click()
+    cy.get('#form_frame')
+      .its('0.contentDocument.body')
+      .find('#first_name, #last_name')
+      .each(($el, index) => {
+        cy.wrap($el).type(names[index])
+      })
+    cy.get('#form_frame')
+      .its('0.contentDocument.body').find('#submit').click()
     cy.get('#result').should('have.text', `You entered: ${names.join(' ')}`)
 
   })
-});
+})

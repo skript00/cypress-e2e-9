@@ -1,4 +1,4 @@
-import BasePage from "./BasePage";
+import BasePage from './BasePage'
 
 
 class TablesPage extends BasePage {
@@ -33,4 +33,4 @@ class TablesPage extends BasePage {
 
 }
 
-export default TablesPage;
+export default TablesPage

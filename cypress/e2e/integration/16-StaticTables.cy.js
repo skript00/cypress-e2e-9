@@ -6,12 +6,12 @@ const tablesPage = new TablesPage()
 
 describe('Static Tables', () => {
   beforeEach(() => {
-    cy.clickCard("Tables");
+    cy.clickCard('Tables')
     cy.fixture('example').then(function(data) {
       this.headers = data.headers
     })
 
-  });
+  })
 
   /**
    * Test Case

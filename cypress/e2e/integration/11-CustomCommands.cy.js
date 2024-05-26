@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 
-describe("Custom Commands", () => {
+describe('Custom Commands', () => {
   beforeEach(() => {
-    cy.clickCard("Html Elements");
-  });
+    cy.clickCard('Html Elements')
+  })
 
 
-  it("Parent Commands", () => {
+  it('Parent Commands', () => {
 
     /* Parent Commands */
     // cy.get()
@@ -16,10 +16,10 @@ describe("Custom Commands", () => {
     // cy.window()
     // cy.on()
 
-     cy.selectDropdownOption('#company_dropdown1', 'Apple')
+    cy.selectDropdownOption('#company_dropdown1', 'Apple')
 
-     cy.login('randomEmail@gmail.com', 'TechGlobal')
-  });
+    cy.login('randomEmail@gmail.com', 'TechGlobal')
+  })
 
   it('Child Command', () => {
 
@@ -56,4 +56,4 @@ describe("Custom Commands", () => {
   // })
 
 
-});
+})
