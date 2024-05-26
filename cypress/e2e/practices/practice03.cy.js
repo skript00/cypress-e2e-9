@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("Practice03 - Validate Wikipedia", () => {
+describe("Practice03 - Validate Wikipedia", {tags:['@WikiTag']}, () => {
   beforeEach(() => {
     cy.visit("https://www.wikipedia.org/");
   });
