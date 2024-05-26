@@ -24,7 +24,7 @@ describe('Static Tables', () => {
    * 
    * NOTE: USE POM, and Fixtures
    */
-  it('Verify the headers of the table', () => {
+  it('Verify the headers of the table', { tags: ['@table']}, () => {
 
     tablesPage.getHeaders().each(function ($el, index) {
       cy.wrap($el).should('have.text', this.headers[index])
