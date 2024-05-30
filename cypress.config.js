@@ -12,6 +12,7 @@ module.exports = defineConfig({
     SITE_URL: process.env.UI_URL,
     UI_USERNAME: process.env.UI_USERNAME,
     UI_PASSWORD: process.env.UI_PASSWORD,
+    // base_URL: process.env.base_URL
   },
 
   reporter: 'cypress-mochawesome-reporter',
